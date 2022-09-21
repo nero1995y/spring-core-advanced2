@@ -30,5 +30,7 @@ public class PoxyFactoryTest {
         proxy.save();
 
         assertThat(AopUtils.isAopProxy(proxy)).isTrue();
+        assertThat(AopUtils.isJdkDynamicProxy(proxy)).isTrue();
+        assertThat(AopUtils.isCglibProxy(proxy)).isFalse();
     }
 }
